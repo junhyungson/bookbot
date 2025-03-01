@@ -18,3 +18,15 @@ def count_characters(text):
         else:
             char_counts[char] = 1
     return char_counts
+
+def sort_character_counts(char_count):
+    # Convert dictionary to a list of (character, count) tuples
+    char_list = []
+    for char, count in char_count.items():
+        if char.isalpha():  # Keep only letters
+            char_list.append((char, count))
+
+    # Sort the list based on count in descending order
+    char_list.sort(key=lambda item: item[1], reverse=True)
+
+    return char_list
